@@ -118,3 +118,4 @@ Check the terminal running npm run dev for errors.
 Open browser devtools on your phone (or inspect via desktop remote debugging) and check console/network errors.
 Extra checks (if route exists but clicking Shop doesn't navigate on mobile):
 
+# kammats-...-a
