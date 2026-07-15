@@ -1,0 +1,21 @@
+<svg width="400" height="500" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bagGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff8f2"/>
+      <stop offset="100%" stop-color="#f2d4a4"/>
+    </linearGradient>
+    <linearGradient id="tagGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8c06c"/>
+      <stop offset="100%" stop-color="#d97140"/>
+    </linearGradient>
+  </defs>
+  <rect x="120" y="80" width="160" height="220" rx="28" fill="url(#bagGradient)" stroke="#d99c5a" stroke-width="10"/>
+  <path d="M200 300 C220 330 260 330 280 300" fill="#f6d6a6"/>
+  <path d="M200 300 C210 320 250 320 270 300" stroke="#d99c5a" stroke-width="6" fill="none"/>
+  <path d="M200 95 L200 34" stroke="#d99c5a" stroke-width="10" stroke-linecap="round"/>
+  <rect x="160" y="0" width="80" height="40" rx="12" fill="url(#tagGradient)"/>
+  <path d="M170 12 L220 32 L230 15" stroke="#7a421d" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <circle cx="200" cy="142" r="6" fill="#d99c5a"/>
+  <circle cx="200" cy="172" r="6" fill="#d99c5a"/>
+  <circle cx="200" cy="202" r="6" fill="#d99c5a"/>
+</svg>

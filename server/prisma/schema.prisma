@@ -1,0 +1,88 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      String   @default("user")
+  createdAt DateTime @default(now())
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  price       Float
+  images      String // Storing as JSON string
+  category    String
+  stock       Int
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}
+
+model Cart {
+  id        String @id @default(cuid())
+  userId    String
+  productId String
+  quantity  Int
+}
+
+model Order {
+  id                    String   @id @default(cuid())
+  userId                String?
+  orderNumber           String?  @unique
+  customerName          String?
+  phone                 String?
+  email                 String?
+  address               String?
+  city                  String?
+  state                 String?
+  pincode               String?
+  businessType          String?  @default("B2C") // B2B or B2C
+  customerNotes         String?
+  adminNotes            String?
+  subtotal              Float?
+  gstTotal              Float?
+  grandTotal            Float?
+  totalAmount           Float
+  status                String   @default("pending") // Overall order status
+  orderStatus           String   @default("PROCESSING") // Order processing status
+  paymentStatus         String   @default("PENDING") // Payment specific status
+  invoiceNumber         String?  @unique
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  items                 OrderItem[]
+}
+
+model OrderItem {
+  id          String   @id @default(cuid())
+  orderId     String
+  productId   String
+  productName String?
+  quantity    Int
+  price       Float
+  unitPrice   Float?
+  gstRate     Float?
+  hsnCode     String?
+  gstAmount   Float?
+  lineTotal   Float?
+
+  order       Order    @relation(fields: [orderId], references: [id])
+}
+
+model Admin {
+  id        String   @id @default(uuid())
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
