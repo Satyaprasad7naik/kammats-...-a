@@ -57,18 +57,20 @@ const ProductCard = ({ product }: { product: Product }) => {
 
   return (
     <div ref={cardRef} className="shop-card relative flex flex-col overflow-hidden rounded-2xl cursor-pointer group" style={{ backgroundColor: color || '#d69766', aspectRatio: '3 / 4' }}>
-      {image2 && <img src={image2} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" draggable={false} />}
+
+      {image2 && <img src={image2} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover pointer-events-none"  draggable={false} />}
+      {/* {image2 && <img src={image2} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" draggable={false} />} */}
       {image3 && <img ref={piecesRef} src={image3} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none z-[3]" draggable={false} />}
       <div className="relative z-10 px-4 md:px-6 pt-5 md:pt-7">
         <h3 className="font-black uppercase leading-tight tracking-tight" style={{ color: textColor || '#fff', fontSize: 'clamp(1rem, 3.5vw, 2rem)', textShadow: '0 2px 8px rgba(0,0,0,0.18)' }}>
           {product.name}
         </h3>
-        <p className="font-bold text-lg mt-2" style={{ color: textColor || '#fff' }}>₹{product.price}</p>
+        <p className="font-bold text-lg mt-2" style={{ color: textColor || '#ffffff' }}>₹{product.price}</p>
       </div>
       <div className="relative z-[4] flex-1 flex items-end justify-center pb-10">
         {image1 && <img ref={canRef} src={image1} alt={product.name} className="object-contain drop-shadow-2xl select-none transition-transform duration-500 group-hover:scale-105" style={{ height: '75%', maxHeight: '360px', width: 'auto', transformOrigin: 'bottom center' }} draggable={false} />}
       </div>
-      <div ref={ctaRef} className="absolute bottom-5 left-0 right-0 z-20 flex justify-center pointer-events-none">
+      <div ref={ctaRef} className="absolute bottom-5 left-0 right-0 z-50 flex justify-center pointer-events-none">
         <button
           className="px-8 py-3 rounded-full bg-white/95 text-[#3e2a21] font-bold text-sm tracking-widest uppercase shadow-xl pointer-events-auto hover:bg-[#3e2a21] hover:text-white transition-colors"
           onClick={(e) => {
@@ -96,22 +98,81 @@ const ShopPage = () => {
   const [loading, setLoading] = useState(true);
   const { syncCart } = useCart();
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch(getApiUrl('/api/products'));
-        const data = await response.json();
-        setProducts(data);
-        syncCart(data.map((product: Product) => product.id));
-      } catch (error) {
-        console.error('Error fetching products:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     try {
+  //       const response = await fetch(getApiUrl('/api/products'));
+  //       // The API returns products where 'images' is a string. We need to parse it.
+  //       const rawProducts: (Omit<Product, 'images'> & { images: string })[] = await response.json();
+  //       const parsedProducts = rawProducts.map(product => ({
+  //         ...product,
+  //         images: JSON.parse(product.images || '[]'),
+  //       }));
+  //       setProducts(parsedProducts);
+  //       syncCart(parsedProducts.map((product: Product) => product.id));
+  //     } catch (error) {
+  //       console.error('Error fetching products:', error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    fetchProducts();
-  }, [syncCart]);
+
+  //   fetchProducts();
+  // }, [syncCart]);
+
+//   useEffect(() => {
+//   const fetchProducts = async () => {
+//     try {
+//       const response = await fetch(getApiUrl('/api/products'));
+
+//       if (!response.ok) {
+//         throw new Error(`HTTP ${response.status}`);
+//       }
+
+//       const data: Product[] = await response.json();
+
+//       console.log(data);
+
+//       setProducts(data);
+//       syncCart(data.map(product => product.id));
+//     } catch (error) {
+//       console.error("Error fetching products:", error);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   fetchProducts();
+// }, [syncCart]);
+
+
+
+useEffect(() => {
+  const fetchProducts = async () => {
+    try {
+      console.log("Fetching:", getApiUrl("/api/products"));
+
+      const response = await fetch(getApiUrl("/api/products"));
+
+      console.log("Status:", response.status);
+
+      const data = await response.json();
+
+      console.log("Products:", data);
+      console.log("Count:", data.length);
+
+      setProducts(data);
+      syncCart(data.map((p: Product) => p.id));
+    } catch (error) {
+      console.error("Fetch error:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchProducts();
+}, [syncCart]);
 
   return (
     <div className="bg-[#f5ebe0] min-h-screen text-[#3e2a21] font-sans overflow-x-hidden">
@@ -129,7 +190,7 @@ const ShopPage = () => {
           ))}
         </div>
         <p className="max-w-2xl mx-auto text-center text-lg font-medium opacity-70 mt-10 px-6">
-          Browse all our bold and delicious flavors, ready to fuel your next adventure. Discover your favorite today!
+          Welcome to our official shop! Browse our collection of hand-crafted teas below.
         </p>
       </section>
 

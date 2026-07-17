@@ -58,15 +58,15 @@ const BenifitSection = () => {
             <div className="container mx-auto pt-16 mb-0 py-0">
                 <div className="col-center">
                     <p className="md:text-sm para-animation">Unlock the Advantages:
-                        <br />Explore the Key Benefits of Choosing SPYLT
+                        <br />Explore the Key Benefits of Choosing kammats tea 
                     </p>
                 </div>
 
                 <div className="md:mt-20 md:mb-0 mb-30 mt-30 col-center">
-                    <ClipPathTitle title={"Shelf stable"} color={"#faeade"} bg={"#c88e64"} className={"first-title"} borderColor={"#222123"} />
-                    <ClipPathTitle title={"Protein+Caffeine"} color={"#222123"} bg={"#faeade"} className={"second-title"} borderColor={"#222123"} />
-                    <ClipPathTitle title={"Infinitely recyclable"} color={"#faeade"} bg={"#7f3b2d"} className={"third-title"} borderColor={"#222123"} />
-                    <ClipPathTitle title={"Lactose free"} color={"#2e2d2f"} bg={"#fed775"} className={"fourth-title"} borderColor={"#222123"} />
+                    <ClipPathTitle title={"HAND-PICKED LEAVES "} color={"#faeade"} bg={"#c88e64"} className={"first-title"} borderColor={"#222123"} />
+                    <ClipPathTitle title={"SINGLE ORIGIN TEA "} color={"#222123"} bg={"#faeade"} className={"second-title"} borderColor={"#222123"} />
+                    <ClipPathTitle title={"AUTHENTIC INDIAN CHAI"} color={"#faeade"} bg={"#7f3b2d"} className={"third-title"} borderColor={"#222123"} />
+                    <ClipPathTitle title={"FRESHLY BLENDED"} color={"#2e2d2f"} bg={"#fed775"} className={"fourth-title"} borderColor={"#222123"} />
                 </div>
                 <div className="md:mt-0 md:pb-0 pb-20 mt-10">
                     <p>And much more ...</p>

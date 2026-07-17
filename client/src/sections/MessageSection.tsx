@@ -70,15 +70,15 @@ const MessageSection = () => {
                 <div className="w-full h-full md:px-30">
                     <div className="msg-wrapper">
                         <h1 className="first-message text-wrap w-[90%]">
-                            ROOTED IN HERITAGE AND
+                            EVERY CUP
                         </h1>
                         <div className="msg-text-scroll md:mt-12 mt-0">
                             <div className="bg-light-brown md:pb-4 pb-3 px-5">
-                                <h2 className="text-red-brown">BREWED</h2>
+                                <h2 className="text-red-brown">TELLS </h2>
                             </div>
                         </div>
                         <h1 className="second-message md:w-full w-[80%]">
-                            FOR THE MOMENTS THAT MATTER
+                            EVERY A STORY OF LEGACY .
                         </h1>
                     </div>
                     <div className="flex-center md:mt-20 mt-10">

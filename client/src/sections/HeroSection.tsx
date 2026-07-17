@@ -86,11 +86,11 @@ const HeroSection = () => {
                 )}
                 <div className="hero-content opacity-0">
                     <div className="overflow-hidden">
-                        <h1 className="hero-title lg:p-0 p-2"> THE ART OF TEA </h1>
+                        <h1 className="hero-title lg:p-0 p-2"> KAMAT'S TEA </h1>
                     </div>
                     <div className="hero-text-scroll">
                         <div className="hero-subtitle">
-                            <h1>HERITAGE. PERFECTLY BREWED.</h1>
+                            <h1>  TEA SINCE 1986. </h1>
                         </div>
                     </div>
                     <h2>From India's finest tea gardens to homes around the world, every Kamat's blend is thoughtfully crafted to deliver exceptional aroma, timeless flavor, and moments worth sharing.</h2>

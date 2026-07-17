@@ -196,7 +196,7 @@ import menu1 from "../assets/menu-img/menu1.png";
 import menu2 from "../assets/menu-img/menu2.png";
 import menu3 from "../assets/menu-img/menu3.png";
 import menu4 from "../assets/menu-img/menu4.png";
-import menu5 from "../assets/menu-img/menu5.png";
+// import menu5 from "../assets/menu-img/menu5.png";
 import menu6 from "../assets/menu-img/menu6.png";
 // import menu7 from "../assets/menu-img/menu7.webp";
 
@@ -226,7 +226,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen = false, onClose }) => {
         { name: "Find in stores", img: menu2, path: "/shop" },
         { name: "About Us", img: menu3, path: "/" },
         { name: "Tasty Talks", img: menu4, path: "/" },
-        { name: "Programs", img: menu5, path: "/" },
+        // { name: "Programs", img: menu5, path: "/" },
         { name: "Contacts", img: menu6, path: "/" },
     ];
 
@@ -306,7 +306,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen = false, onClose }) => {
             gsap.fromTo(
                 menu,
                 { yPercent: -100, opacity: 0, display: "flex" },
-                { yPercent: 0, opacity: 1, duration: 1, ease: "power3.out", display: "flex" }
+                { yPercent: 0, opacity: 1, duration: 0.6, ease: "power3.out", display: "flex" }
             );
         } else {
             gsap.to(menu, {
@@ -389,7 +389,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen = false, onClose }) => {
                     
                     {/* Re-enabled pointer events so the form and links can be clicked */}
                     <div className="absolute inset-0 flex items-center justify-center p-8 pointer-events-auto">
-                        <div className="bg-black/40 border border-white/20 text-white rounded-3xl p-8 w-full max-w-lg shadow-2xl backdrop-blur-md overflow-y-auto max-h-full scrollbar-hide">
+                        <div className="bg-black/40 border border-white/0 text-white rounded-3xl p-8 w-full max-w-lg shadow-2xl backdrop-blur-[1.5px] overflow-y-auto max-h-full scrollbar-hide">
                             
                             <h2 className="text-3xl font-extrabold uppercase tracking-tight mb-3">
                                 {sectionDetails[displayedItem.name].heading}

@@ -44,7 +44,7 @@ router.get('/:id', async (req, res) => {
     res.json(parsedProduct);
   } catch (error) {
     console.error('Error fetching product from DB:', error);
-    res.status(500).json({ error: 'Failed to fetch product' });
+    res.status(500).json({ error: 'Failed to fetch product from DB' });
   }
 });
 
