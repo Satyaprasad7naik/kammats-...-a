@@ -119,3 +119,4 @@ Open browser devtools on your phone (or inspect via desktop remote debugging) an
 Extra checks (if route exists but clicking Shop doesn't navigate on mobile):
 
 # kammats-...-a
+# TEA
